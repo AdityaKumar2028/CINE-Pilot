@@ -1,18 +1,20 @@
 import Header from "./Header";
 import { useNowPlayingMovies } from "../hooks/useNowPlayingMovies.jsx";
-import PrimaryBrowse from "./primaryBrowse.jsx";
+import PrimaryBrowse from "./PrimaryBrowse.jsx";
+import SecondaryBrowse from "./SecondaryBrowse.jsx";
+
 const Browse = () => {
   useNowPlayingMovies();
 
   return (
-    <div className="browse-container bg-black">
+    <div className="bg-black min-h-screen">
       <Header />
-      <div className="content pt-12 min-h-screen">
-        <h1 className="text-white">
-          <PrimaryBrowse />
-        </h1>
+      <div className="pt-12">
+        <PrimaryBrowse />
+        <SecondaryBrowse />
       </div>
     </div>
   );
 };
+
 export default Browse;
