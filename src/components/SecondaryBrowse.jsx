@@ -3,14 +3,14 @@ import MovieList from "./MovieList";
 const SecondaryBrowse = () => {
   const movies = useSelector((store) => store.movies);
   if (!movies) return;
-  const { nowPlayingMovies, popularMovies, topRatedMovies } = movies;
+  const { nowPlayingMovies, popularMovies, topRatedMovies, upcomingMovies } =
+    movies;
   return (
-    <div className="-mt-54 relative z-20">
+    <div className="-mt-40 relative z-20">
       <MovieList title={"Now Playing"} movies={nowPlayingMovies} />
       <MovieList title={"Trending"} movies={popularMovies} />
       <MovieList title={"Popular"} movies={topRatedMovies} />
-      {/* <MovieList title={"Upcoming Movies"} movies={movies} />
-      <MovieList title={"Horror"} movies={movies} /> */}
+      <MovieList title={"Upcoming Movies"} movies={upcomingMovies} />
     </div>
   );
 };

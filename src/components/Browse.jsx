@@ -4,11 +4,13 @@ import PrimaryBrowse from "./PrimaryBrowse.jsx";
 import SecondaryBrowse from "./SecondaryBrowse.jsx";
 import { usePopularMovies } from "../hooks/usePopularMovies.jsx";
 import { useTopRatedMovies } from "../hooks/useTopRatedMovies.jsx";
+import { useUpcomingMovies } from "../hooks/useUpcomingMovies.jsx";
 
 const Browse = () => {
   useNowPlayingMovies();
   usePopularMovies();
   useTopRatedMovies();
+  useUpcomingMovies();
 
   return (
     <div className="bg-black min-h-screen">
