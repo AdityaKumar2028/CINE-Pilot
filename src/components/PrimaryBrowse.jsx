@@ -4,8 +4,7 @@ import VideoTitle from "./VideoTitle.jsx";
 
 const PrimaryBrowse = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
-
-  if (!movies) return null;
+  if (!movies) return;
   const { original_title, overview, id } = movies[1];
 
   return (

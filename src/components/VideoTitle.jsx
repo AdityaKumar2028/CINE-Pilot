@@ -2,7 +2,7 @@ const VideoTitle = ({ original_title, overview }) => {
   return (
     <>
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10" />
-      <div className="absolute z-20 top-1/3 left-8 sm:left-16 w-full max-w-lg text-white">
+      <div className="absolute z-20 top-1/4 left-8 sm:left-16 w-full max-w-lg text-white">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
           {original_title}
         </h1>

@@ -3,12 +3,10 @@ import happy from "../assets/happy.png";
 import { signOut } from "firebase/auth";
 import { auth } from "../assets/firebase";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { removeUser } from "../assets/userSlice";
+import { removeUser, addUser } from "../assets/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
-import { addUser } from "../assets/userSlice";
-import { useDispatch } from "react-redux";
 
 const Header = () => {
   const store = useSelector((store) => store.user);
@@ -27,7 +25,7 @@ const Header = () => {
       }
     });
     return () => unsubscribe();
-  }, []);
+  }, [dispatch, navigate]);
 
   function handleSignOut() {
     signOut(auth)
@@ -38,28 +36,30 @@ const Header = () => {
   }
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md shadow-2xl border-b border-red-500/50 p-2 sm:p-3 md:p-4 flex justify-between items-center">
+    // Much smoother, shorter fade to transparent
+    <div className="absolute top-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-gradient-to-b from-black/80 to-transparent">
+      {/* THE MAGIC FIX: 'mix-blend-screen' removes the black background from your JPEG. 
+        Note: For the best long-term result, replace logo.jpg with a transparent logo.png!
+      */}
       <img
+        className="w-44 object-contain mix-blend-screen"
         src={logo}
-        alt="CINEPilot Logo"
-        className="w-24 sm:w-32 md:w-44 h-auto object-contain cursor-pointer hover:scale-105 transition-transform"
+        alt="logo"
       />
 
       {store && (
-        <div className="flex items-center gap-1.5 sm:gap-3 md:gap-6">
-          <span className="hidden md:block text-white text-sm md:text-base font-medium truncate max-w-32">
+        <div className="flex items-center gap-4">
+          <img
+            className="w-9 h-9 rounded object-cover"
+            src={happy}
+            alt="user-avatar"
+          />
+          <span className="text-white font-medium text-sm hidden sm:block">
             {store?.displayName}
           </span>
-
-          <img
-            src={happy}
-            alt="User avatar"
-            className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full cursor-pointer hover:scale-110 transition-transform"
-          />
-
           <button
             onClick={handleSignOut}
-            className="px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 text-xs sm:text-sm md:text-base text-white font-medium rounded bg-red-600/20 hover:bg-red-600 hover:scale-105 transition-all"
+            className="text-white text-sm font-semibold hover:opacity-70 transition-opacity duration-200"
           >
             Sign Out
           </button>

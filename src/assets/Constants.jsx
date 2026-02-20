@@ -13,3 +13,5 @@ export const API_OPTIONS = {
     Authorization: `Bearer ${API_KEY}`,
   },
 };
+
+export const TMDB_CDN_URL = "https://images.tmdb.org/t/p/w500/";
