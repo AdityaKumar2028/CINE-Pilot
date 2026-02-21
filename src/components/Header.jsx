@@ -38,9 +38,9 @@ const Header = () => {
   }
 
   return (
-    <div className="absolute top-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-gradient-to-b from-black/80 to-transparent">
+    <div className="absolute top-0 w-full z-50 flex justify-between items-center px-4 sm:px-8 py-3 sm:py-4 bg-gradient-to-b from-black/80 to-transparent">
       <img
-        className="cursor-pointer w-44 object-contain mix-blend-screen rounded-lg"
+        className="cursor-pointer w-28 sm:w-44 object-contain mix-blend-screen rounded-lg"
         src={logo}
         alt="logo"
         onClick={() => {
@@ -49,9 +49,9 @@ const Header = () => {
       />
 
       {user && (
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-3 sm:gap-8">
           <img
-            className="cursor-pointer w-9 h-9 rounded object-cover"
+            className="cursor-pointer w-8 h-8 sm:w-9 sm:h-9 rounded object-cover"
             src={happy}
             alt="user-avatar"
           />
@@ -63,7 +63,7 @@ const Header = () => {
           {askPilotEnabled ? (
             <button
               onClick={handleAskPilot}
-              className="bg-white text-black px-5 py-1.5 rounded-md font-semibold hover:bg-gray-200 transition"
+              className="bg-white text-black px-3 py-1 sm:px-5 sm:py-1.5 text-sm sm:text-base rounded-md font-semibold hover:bg-gray-200 transition"
             >
               Home
             </button>
@@ -74,9 +74,9 @@ const Header = () => {
             >
               <div className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,#ff0080,#ff4500,#ffd700,#00ff88,#00cfff,#a855f7,#ff0080)] animate-[spin_2.5s_linear_infinite] group-hover:animate-[spin_1.2s_linear_infinite] group-hover:brightness-125 transition-all" />
 
-              <div className="relative z-10 flex items-center gap-[7px] bg-[#0a0a0f] group-hover:bg-[#12121a] transition-colors duration-200 rounded-[8px] px-[18px] py-2">
+              <div className="relative z-10 flex items-center gap-[5px] sm:gap-[7px] bg-[#0a0a0f] group-hover:bg-[#12121a] transition-colors duration-200 rounded-[8px] px-3 py-1.5 sm:px-[18px] sm:py-2">
                 <svg
-                  className="w-[15px] h-[15px] opacity-90 shrink-0"
+                  className="w-[12px] h-[12px] sm:w-[15px] sm:h-[15px] opacity-90 shrink-0"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
@@ -92,7 +92,7 @@ const Header = () => {
                   />
                 </svg>
 
-                <span className="text-white text-sm font-semibold tracking-wide whitespace-nowrap">
+                <span className="text-white text-xs sm:text-sm font-semibold tracking-wide whitespace-nowrap">
                   Ask Pilot
                 </span>
               </div>
@@ -101,7 +101,7 @@ const Header = () => {
 
           <button
             onClick={handleSignOut}
-            className="text-white cursor-pointer text-sm font-semibold hover:opacity-70 transition-opacity duration-200 ml-2"
+            className="text-white cursor-pointer text-xs sm:text-sm font-semibold hover:opacity-70 transition-opacity duration-200"
           >
             Sign Out
           </button>

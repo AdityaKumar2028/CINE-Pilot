@@ -8,7 +8,7 @@ const PrimaryBrowse = () => {
   const { original_title, overview, id } = movies[1];
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden">
+    <div className="relative w-full h-auto md:h-full bg-black overflow-hidden">
       <VideoBackground movieId={id} />
       <VideoTitle original_title={original_title} overview={overview} />
     </div>
