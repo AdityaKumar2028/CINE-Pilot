@@ -8,9 +8,9 @@ const SecondaryBrowse = () => {
   return (
     <div className="-mt-40 relative z-20">
       <MovieList title={"Now Playing"} movies={nowPlayingMovies} />
-      <MovieList title={"Trending"} movies={popularMovies} />
       <MovieList title={"Popular"} movies={topRatedMovies} />
       <MovieList title={"Upcoming Movies"} movies={upcomingMovies} />
+      <MovieList title={"Trending"} movies={popularMovies} />
     </div>
   );
 };
