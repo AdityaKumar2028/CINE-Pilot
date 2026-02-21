@@ -10,7 +10,7 @@ export const usePopularMovies = () => {
   }, []);
   const fetchPopularMovies = async () => {
     const data = await fetch(
-      "https://corsproxy.io/?https://api.themoviedb.org/3/movie/popular?page=1",
+      "https://api.themoviedb.org/3/movie/popular?page=1",
       API_OPTIONS,
     );
     const json = await data.json();

@@ -7,7 +7,7 @@ export const useTopRatedMovies = () => {
   const dispatch = useDispatch();
   const fetchTopRatedMovies = async () => {
     const data = await fetch(
-      "https://corsproxy.io/?https://api.themoviedb.org/3/movie/top_rated?page=1",
+      "https://api.themoviedb.org/3/movie/top_rated?page=1",
       API_OPTIONS,
     );
     const json = await data.json();
