@@ -7,7 +7,7 @@ export const useTopRatedMovies = () => {
   const dispatch = useDispatch();
   const fetchTopRatedMovies = async () => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/movie/top_rated?page=1",
+      "/api/tmdb?path=movie/top_rated&page=1",
       API_OPTIONS,
     );
     const json = await data.json();
