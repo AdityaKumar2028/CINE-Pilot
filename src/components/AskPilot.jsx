@@ -1,14 +1,8 @@
 import React, { useRef } from "react";
 import { backgroundURL } from "../assets/Constants";
-import ai from "../assets/gemini";
 
 const AskPilot = () => {
   const inputRef = useRef(null);
-  async function geminiSearch(query) {
-    const data = await response.json();
-
-    console.log(data.text);
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
