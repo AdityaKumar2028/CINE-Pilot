@@ -14,11 +14,16 @@ const AskPilot = () => {
     }
   };
   async function geminiSearch(query) {
+    const geminiQuery =
+      "Act as a movie recommendation system and suggest some movies for the query " +
+      query +
+      "only 5 names of famous movies which are highly recommended. Give names comma seperated like the example result given ahead. Example result: Dhurandhar, Animal, Kabir Singh, KGF, Dangal";
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
-      contents: "How does AI work?",
+      contents: geminiQuery,
     });
-    console.log(response.text);
+
+    console.log(response);
   }
 
   return (
