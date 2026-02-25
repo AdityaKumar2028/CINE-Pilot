@@ -4,6 +4,11 @@ import ai from "../assets/gemini";
 
 const AskPilot = () => {
   const inputRef = useRef(null);
+  async function geminiSearch(query) {
+    const data = await response.json();
+
+    console.log(data.text);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,10 +22,12 @@ const AskPilot = () => {
     const geminiQuery =
       "Act as a movie recommendation system and suggest some movies for the query " +
       query +
-      "only 5 names of famous movies which are highly recommended. Give names comma seperated like the example result given ahead. Example result: Dhurandhar, Animal, Kabir Singh, KGF, Dangal";
-    const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
-      contents: geminiQuery,
+      " only 5 names of famous movies. Give comma separated names.";
+
+    const response = await fetch("/api/gemini", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt: geminiQuery }),
     });
 
     console.log(response);
