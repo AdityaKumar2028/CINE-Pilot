@@ -24,7 +24,8 @@ const AskPilot = () => {
       body: JSON.stringify({ prompt: geminiQuery }),
     });
 
-    console.log(response);
+    const data = await response.json();
+    console.log(data);
   }
 
   return (

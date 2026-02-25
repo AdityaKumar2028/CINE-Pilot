@@ -13,10 +13,12 @@ export default async function handler(req, res) {
       contents: prompt,
     });
 
-    res.status(200).json({
-      text: result.text,
-    });
+    const text =
+      result.candidates?.[0]?.content?.parts?.[0]?.text ?? result.text ?? "";
+
+    res.status(200).json({ text });
   } catch (err) {
+    console.error("Gemini error:", err);
     res.status(500).json({ error: err.message });
   }
 }
