@@ -16,7 +16,6 @@ const Browse = () => {
   const askPilotSearchState = useSelector(
     (store) => store?.askPilot?.askPilotState,
   );
-  console.log(askPilotSearchState);
 
   return (
     <div className="bg-black min-h-screen">

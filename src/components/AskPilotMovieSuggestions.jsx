@@ -1,12 +1,21 @@
-import React from "react";
 import { useSelector } from "react-redux";
+import MovieList from "./MovieList";
 
 const AskPilotMovieSuggestions = () => {
   const movies = useSelector((store) => store?.askPilot);
   if (!movies) return;
-  console.log(movies.movieName);
-  console.log(movies.movieResult);
-  return <div>AskPilotMovieSuggestions</div>;
+  const { movieNames, movieResult } = movies;
+  if (!movieNames || !movieResult) return;
+  console.log(movieNames);
+  console.log(movieResult);
+
+  return (
+    <div>
+      {movieNames.map((movieName, index) => (
+        <MovieList title={movieName} movies={movieResult[index]} />
+      ))}
+    </div>
+  );
 };
 
 export default AskPilotMovieSuggestions;
