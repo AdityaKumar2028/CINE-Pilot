@@ -17,19 +17,18 @@ const GeminiSearch = async (query, dispatch) => {
   //   contents: geminiQuery,
   // });
   // const text = response.candidates[0].content.parts[0].text;
-  const text = await response.json();
-  console.log(text);
+  const result = await response.json();
 
-  // const movieList = text.split(", ");
+  const movieList = result.text.split(", ");
 
-  // const resultResponse = await Promise.all(movieList.map(fetchMovieSearch));
+  const resultResponse = await Promise.all(movieList.map(fetchMovieSearch));
 
-  // dispatch(
-  //   addPilotMovies({
-  //     movieNames: movieList,
-  //     movieResult: resultResponse,
-  //   }),
-  // );
+  dispatch(
+    addPilotMovies({
+      movieNames: movieList,
+      movieResult: resultResponse,
+    }),
+  );
 };
 
 export default GeminiSearch;
