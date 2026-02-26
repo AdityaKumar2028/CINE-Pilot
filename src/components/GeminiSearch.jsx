@@ -16,7 +16,8 @@ const GeminiSearch = async (query, dispatch) => {
   //   model: "gemini-2.5-flash",
   //   contents: geminiQuery,
   // });
-  const text = response.candidates[0].content.parts[0].text;
+  // const text = response.candidates[0].content.parts[0].text;
+  const text = await response.json();
 
   const movieList = text.split(", ");
 
