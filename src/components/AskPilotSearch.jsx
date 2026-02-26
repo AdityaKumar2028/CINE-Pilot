@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { GeminiSearch } from "./GeminiSearch";
+import GeminiSearch from "./GeminiSearch";
 import { useDispatch } from "react-redux";
 
 const AskPilotSearch = () => {
