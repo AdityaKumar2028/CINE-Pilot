@@ -25,6 +25,7 @@ const Login = () => {
     setisSignInForm(!isSignInForm);
     setShowPassword("password");
   }
+
   function handlePasswordClick() {
     setShowPassword(showPassword === "password" ? "text" : "password");
   }

@@ -1,40 +1,28 @@
 import logo from "../assets/logo.jpg";
 import happy from "../assets/happy.png";
-import { signOut, onAuthStateChanged } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import { auth } from "../assets/firebase";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { removeUser, addUser } from "../assets/userSlice";
-import { toogleAskPilot } from "../assets/askPilotSlice";
+import { addAskPilotState } from "../assets/askPilotSlice";
+import AskPilotButton from "./AskPilotButton";
+import useAuthListener from "../hooks/useAuthListener";
+import { useCallback } from "react";
 
 const Header = () => {
   const user = useSelector((store) => store.user);
-  const askPilotEnabled = useSelector((store) => store.askPilot?.askPilotState);
-
+  const askPilotState = useSelector((store) => store.askPilot?.askPilotState);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  useAuthListener();
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (u) => {
-      if (u) {
-        const { uid, email, displayName } = u;
-        dispatch(addUser({ uid, email, displayName }));
-        navigate("/browse");
-      } else {
-        dispatch(removeUser());
-        navigate("/");
-      }
-    });
-    return () => unsubscribe();
-  }, [dispatch, navigate]);
+  const handleAskPilot = useCallback(() => {
+    console.log("Inside useCallback");
+    dispatch(addAskPilotState(!askPilotState));
+  }, [dispatch, askPilotState]);
 
   function handleSignOut() {
     signOut(auth).catch(() => navigate("/error"));
-  }
-
-  function handleAskPilot() {
-    dispatch(toogleAskPilot());
   }
 
   return (
@@ -44,7 +32,7 @@ const Header = () => {
         src={logo}
         alt="logo"
         onClick={() => {
-          dispatch(toogleAskPilot());
+          dispatch(addAskPilotState(false));
         }}
       />
 
@@ -60,43 +48,15 @@ const Header = () => {
             {user?.displayName}
           </span>
 
-          {askPilotEnabled ? (
+          {askPilotState ? (
             <button
               onClick={handleAskPilot}
-              className="bg-white text-black px-3 py-1 sm:px-5 sm:py-1.5 text-sm sm:text-base rounded-md font-semibold hover:bg-gray-200 transition"
+              className="bg-white cursor-pointer text-black px-3 py-1 sm:px-5 sm:py-1.5 text-sm sm:text-base rounded-md font-semibold hover:bg-gray-200 transition"
             >
               Home
             </button>
           ) : (
-            <button
-              onClick={handleAskPilot}
-              className="cursor-pointer group relative inline-flex p-[2px] rounded-[10px] overflow-hidden focus:outline-none"
-            >
-              <div className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,#ff0080,#ff4500,#ffd700,#00ff88,#00cfff,#a855f7,#ff0080)] animate-[spin_2.5s_linear_infinite] group-hover:animate-[spin_1.2s_linear_infinite] group-hover:brightness-125 transition-all" />
-
-              <div className="relative z-10 flex items-center gap-[5px] sm:gap-[7px] bg-[#0a0a0f] group-hover:bg-[#12121a] transition-colors duration-200 rounded-[8px] px-3 py-1.5 sm:px-[18px] sm:py-2">
-                <svg
-                  className="w-[12px] h-[12px] sm:w-[15px] sm:h-[15px] opacity-90 shrink-0"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M12 2L13.8 8.2L20 10L13.8 11.8L12 18L10.2 11.8L4 10L10.2 8.2L12 2Z"
-                    fill="white"
-                    opacity="0.9"
-                  />
-                  <path
-                    d="M19 16L19.9 18.1L22 19L19.9 19.9L19 22L18.1 19.9L16 19L18.1 18.1L19 16Z"
-                    fill="white"
-                    opacity="0.6"
-                  />
-                </svg>
-
-                <span className="text-white text-xs sm:text-sm font-semibold tracking-wide whitespace-nowrap">
-                  Ask Pilot
-                </span>
-              </div>
-            </button>
+            <AskPilotButton props={handleAskPilot} />
           )}
 
           <button
@@ -110,5 +70,4 @@ const Header = () => {
     </div>
   );
 };
-
 export default Header;

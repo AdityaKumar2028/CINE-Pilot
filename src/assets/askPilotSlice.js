@@ -8,8 +8,8 @@ const askPilotSlice = createSlice({
     movieResult: null,
   },
   reducers: {
-    toogleAskPilot: (state) => {
-      state.askPilotState = !state.askPilotState;
+    addAskPilotState: (state, action) => {
+      state.askPilotState = action.payload;
     },
     addPilotMovies: (state, action) => {
       const { movieNames, movieResult } = action.payload;
@@ -19,6 +19,6 @@ const askPilotSlice = createSlice({
   },
 });
 
-export const { toogleAskPilot, addPilotMovies } = askPilotSlice.actions;
+export const { addAskPilotState, addPilotMovies } = askPilotSlice.actions;
 
 export default askPilotSlice.reducer;

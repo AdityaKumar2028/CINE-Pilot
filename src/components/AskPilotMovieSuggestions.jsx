@@ -6,13 +6,11 @@ const AskPilotMovieSuggestions = () => {
   if (!movies) return;
   const { movieNames, movieResult } = movies;
   if (!movieNames || !movieResult) return;
-  console.log(movieNames);
-  console.log(movieResult);
 
   return (
     <div>
       {movieNames.map((movieName, index) => (
-        <MovieList title={movieName} movies={movieResult[index]} />
+        <MovieList title={movieName} movies={movieResult[index]} id={index} />
       ))}
     </div>
   );

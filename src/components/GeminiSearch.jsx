@@ -20,6 +20,7 @@ const GeminiSearch = async (query, dispatch) => {
   const result = await response.json();
 
   const movieList = result.text.split(", ");
+  // const movieList = text.split(", ");
 
   const resultResponse = await Promise.all(movieList.map(fetchMovieSearch));
 

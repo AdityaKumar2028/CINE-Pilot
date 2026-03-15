@@ -1,4 +1,4 @@
-// const apiKey = import.meta.env.VITE_TMDB_TOKEN;
+const apiKey = import.meta.env.VITE_TMDB_TOKEN;
 // const options = {
 //   method: "GET",
 //   headers: {
