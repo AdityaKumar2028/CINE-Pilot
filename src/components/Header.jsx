@@ -17,7 +17,6 @@ const Header = () => {
   useAuthListener();
 
   const handleAskPilot = useCallback(() => {
-    console.log("Inside useCallback");
     dispatch(addAskPilotState(!askPilotState));
   }, [dispatch, askPilotState]);
 
