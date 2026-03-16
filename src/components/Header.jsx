@@ -17,13 +17,15 @@ const Header = () => {
   useAuthListener();
 
   const handleAskPilot = useCallback(() => {
-    dispatch(addAskPilotState(!askPilotState));
-    if (askPilotState) {
-      navigate("/browse");
-    } else {
+    const newState = !askPilotState;
+    dispatch(addAskPilotState(newState));
+
+    if (newState) {
       navigate("/askPilot");
+    } else {
+      navigate("/browse");
     }
-  }, [dispatch, askPilotState]);
+  }, [dispatch, askPilotState, navigate]);
 
   function handleSignOut() {
     signOut(auth).catch(() => navigate("/error"));
