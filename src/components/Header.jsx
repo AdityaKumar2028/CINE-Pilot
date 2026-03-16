@@ -39,6 +39,7 @@ const Header = () => {
         alt="logo"
         onClick={() => {
           dispatch(addAskPilotState(false));
+          useNavigate("/browse");
         }}
       />
 
