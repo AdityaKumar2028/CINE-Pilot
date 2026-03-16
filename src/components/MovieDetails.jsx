@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useMovieDetails } from "../hooks/useMovieDetails";
+import { useSelector } from "react-redux";
 
 const MovieDetails = () => {
   const { id } = useParams();

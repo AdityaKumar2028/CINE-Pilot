@@ -7,15 +7,15 @@ const MovieList = ({ title, movies }) => {
   const hasPoster = movies.some((movie) => movie.poster_path);
 
   return (
-    <div className="movie-container p-3">
-      <div className="Heading-title text-white text-2xl font-bold mb-4 w-full">
-        {hasPoster && title}
-      </div>
+    <div className="px-6 py-3">
+      {hasPoster && (
+        <h2 className="text-white text-2xl font-bold mb-4">{title}</h2>
+      )}
 
-      <div className="movieList flex overflow-x-scroll gap-4 overflow-y-hidden scrollbar-hide">
+      <div className="flex overflow-x-scroll gap-4 scrollbar-hide">
         {movies.map((data) => (
           <Link key={data.id} to={`/movie/${data.id}`}>
-            <MovieCard movieData={data} key={data.id} />
+            <MovieCard movieData={data} />
           </Link>
         ))}
       </div>
