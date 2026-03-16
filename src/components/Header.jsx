@@ -21,7 +21,7 @@ const Header = () => {
     if (askPilotState) {
       navigate("/browse");
     } else {
-      nagivate("/askPilot");
+      navigate("/askPilot");
     }
   }, [dispatch, askPilotState]);
 
