@@ -3,6 +3,7 @@ import Login from "./Login";
 import Header from "./Header";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import MovieDetails from "./MovieDetails";
+import AskPilot from "./AskPilot";
 
 const Body = () => {
   const Layout = () => (
@@ -28,6 +29,10 @@ const Body = () => {
         {
           path: "/movie/:id",
           element: <MovieDetails />,
+        },
+        {
+          path: "/askPilot",
+          element: <AskPilot />,
         },
       ],
     },

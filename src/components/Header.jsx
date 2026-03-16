@@ -18,6 +18,11 @@ const Header = () => {
 
   const handleAskPilot = useCallback(() => {
     dispatch(addAskPilotState(!askPilotState));
+    if (askPilotState) {
+      navigate("/browse");
+    } else {
+      nagivate("/askPilot");
+    }
   }, [dispatch, askPilotState]);
 
   function handleSignOut() {

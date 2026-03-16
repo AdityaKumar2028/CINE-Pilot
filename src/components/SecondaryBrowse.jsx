@@ -1,19 +1,16 @@
 import { useSelector } from "react-redux";
 import MovieList from "./MovieList";
-
 const SecondaryBrowse = () => {
   const movies = useSelector((store) => store.movies);
-  if (!movies) return null;
-
+  if (!movies) return;
   const { nowPlayingMovies, popularMovies, topRatedMovies, upcomingMovies } =
     movies;
-
   return (
-    <div className="relative z-20 bg-black pt-6 md:pt-12">
+    <div className="-mt-4 md:-mt-80 relative z-20">
       <MovieList title={"Now Playing"} movies={nowPlayingMovies} />
-      <MovieList title={"Popular"} movies={popularMovies} />
+      <MovieList title={"Popular"} movies={topRatedMovies} />
       <MovieList title={"Upcoming Movies"} movies={upcomingMovies} />
-      <MovieList title={"Trending"} movies={topRatedMovies} />
+      <MovieList title={"Trending"} movies={popularMovies} />
     </div>
   );
 };
