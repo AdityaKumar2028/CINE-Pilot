@@ -1,11 +1,13 @@
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addMovieCardData } from "../assets/movieSlice";
 
-const VideoTitle = ({ original_title, overview, movieId }) => {
+const VideoTitle = ({ original_title, overview, movieId, movieData }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   function handlePlayBtn() {
-    console.log("handle play run before");
     if (!movieId) return null;
-    console.log("handle play run after");
+    dispatch(addMovieCardData(movieData));
     navigate(`/movie/${movieId}`);
   }
   return (
