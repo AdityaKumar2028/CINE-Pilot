@@ -8,33 +8,33 @@ const AskPilotSearch = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const query = inputRef.current?.value || "";
-
     if (!query.trim()) return;
-
     await GeminiSearch(query, dispatch);
     inputRef.current.value = "";
   };
+
   return (
-    <div className="relative overflow-hidden p-[3px] rounded-2xl w-full max-w-2xl bg-zinc-900">
+    <div className="relative overflow-hidden p-[2px] sm:p-[3px] rounded-2xl w-full max-w-xs sm:max-w-lg md:max-w-2xl bg-zinc-900">
+      {/* Spinning conic-gradient border */}
       <div className="absolute top-1/2 left-1/2 w-[250%] aspect-square -translate-x-1/2 -translate-y-1/4 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_25%,#FF0000_75%,transparent_100%)]" />
 
       <form
         onSubmit={handleSubmit}
-        className="relative z-10 flex bg-[#0a0a0a] rounded-[13px] px-5 py-4 w-full"
+        className="relative z-10 flex items-center bg-[#0a0a0a] rounded-[13px] px-3 sm:px-5 py-3 sm:py-4 w-full gap-2"
       >
         <input
           ref={inputRef}
-          className="flex-1 bg-transparent text-white placeholder-gray-400 outline-none"
+          className="flex-1 bg-transparent text-white text-sm sm:text-base placeholder-gray-500 outline-none min-w-0"
           placeholder="Which movies do you want to watch today?"
         />
         <button
           type="submit"
-          className="text-gray-400 hover:text-[#FF0000] transition-colors ml-3"
+          className="text-gray-400 hover:text-[#FF0000] transition-colors shrink-0"
+          aria-label="Search"
         >
           <svg
-            className="w-6 h-6"
+            className="w-5 h-5 sm:w-6 sm:h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

@@ -2,11 +2,16 @@ import { useParams } from "react-router-dom";
 import { useMovieDetails } from "../hooks/useMovieDetails";
 import { useSelector } from "react-redux";
 import MovieDetailsTrailer from "./MovieDetailsTrailer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const MovieDetails = () => {
   const { id } = useParams();
   const [current, setCurrent] = useState(0);
+  // if (!trailer || trailer.length === 0 || !trailer[current]) return null;
+
+  useEffect(() => {
+    setCurrent(0);
+  }, [id]);
 
   useMovieDetails(id);
 
@@ -19,11 +24,15 @@ const MovieDetails = () => {
   const moveLeft = () =>
     setCurrent((prev) => (prev - 1 + maxTrailers) % maxTrailers);
   const moveRight = () => setCurrent((prev) => (prev + 1) % maxTrailers);
+  console.log("ID:", id);
+  console.log("Trailer:", trailer);
+  console.log("Current index:", current);
+  console.log("Current trailer:", trailer?.[current]);
 
   return (
     <div className="bg-black min-h-screen px-4 py-6">
       <div className="max-w-2xl mx-auto">
-        <MovieDetailsTrailer trailerKey={trailer[current].key} />
+        <MovieDetailsTrailer trailerKey={trailer[current]?.key} />
 
         {buttonValidity && (
           <div className="flex justify-between items-center mt-3">
