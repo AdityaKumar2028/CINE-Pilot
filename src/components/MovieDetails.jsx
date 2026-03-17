@@ -3,11 +3,9 @@ import { useMovieDetails } from "../hooks/useMovieDetails";
 import { useSelector } from "react-redux";
 import MovieDetailsTrailer from "./MovieDetailsTrailer";
 import { useState, useEffect } from "react";
-
 const MovieDetails = () => {
   const { id } = useParams();
   const [current, setCurrent] = useState(0);
-  // if (!trailer || trailer.length === 0 || !trailer[current]) return null;
 
   useEffect(() => {
     setCurrent(0);
@@ -24,30 +22,35 @@ const MovieDetails = () => {
   const moveLeft = () =>
     setCurrent((prev) => (prev - 1 + maxTrailers) % maxTrailers);
   const moveRight = () => setCurrent((prev) => (prev + 1) % maxTrailers);
-  console.log("ID:", id);
-  console.log("Trailer:", trailer);
-  console.log("Current index:", current);
-  console.log("Current trailer:", trailer?.[current]);
 
   return (
-    <div className="bg-black min-h-screen px-4 py-6">
-      <div className="max-w-2xl mx-auto">
-        <MovieDetailsTrailer trailerKey={trailer[current]?.key} />
+    <div className="bg-black min-h-screen px-4 py-2">
+      <div
+        className="mx-auto w-full
+                    max-w-sm
+                    md:max-w-4xl xl:max-w-5xl"
+      >
+        <MovieDetailsTrailer
+          trailerKey={trailer[current]?.key}
+          trailerDetails={trailer[current]}
+        />
 
         {buttonValidity && (
-          <div className="flex justify-between items-center mt-3">
+          <div className="flex justify-between items-center px-1 z-10">
             <button
               onClick={moveLeft}
-              className="bg-white text-black px-4 py-1.5 rounded-lg text-sm font-semibold hover:bg-gray-200 transition"
+              className="bg-white text-black px-4 py-1.5 rounded-lg text-sm font-semibold
+                       hover:bg-gray-200 transition md:px-6 md:py-2 md:text-base"
             >
               ← Prev
             </button>
-            <span className="text-gray-400 text-sm">
+            <span className="text-gray-400 text-sm md:text-base">
               {current + 1} / {maxTrailers}
             </span>
             <button
               onClick={moveRight}
-              className="bg-white text-black px-4 py-1.5 rounded-lg text-sm font-semibold hover:bg-gray-200 transition"
+              className="bg-white text-black px-4 py-1.5 rounded-lg text-sm font-semibold
+                       hover:bg-gray-200 transition md:px-6 md:py-2 md:text-base"
             >
               Next →
             </button>

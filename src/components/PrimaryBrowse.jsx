@@ -10,7 +10,11 @@ const PrimaryBrowse = () => {
   return (
     <div className="relative w-full h-auto md:h-full bg-black overflow-hidden">
       <VideoBackground movieId={id} />
-      <VideoTitle original_title={original_title} overview={overview} />
+      <VideoTitle
+        original_title={original_title}
+        overview={overview}
+        movieId={id}
+      />
     </div>
   );
 };

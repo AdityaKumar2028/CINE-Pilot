@@ -3,8 +3,6 @@ import MovieCard from "./MovieCard";
 
 const MovieList = ({ title, movies }) => {
   if (!Array.isArray(movies) || movies.length === 0) return null;
-  console.log("Raw movies:", movies);
-
   const safeMovies = movies.filter((movie) => movie && movie.poster_path);
 
   if (safeMovies.length === 0) return null;

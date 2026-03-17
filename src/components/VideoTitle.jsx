@@ -1,4 +1,13 @@
-const VideoTitle = ({ original_title, overview }) => {
+import { useNavigate } from "react-router-dom";
+
+const VideoTitle = ({ original_title, overview, movieId }) => {
+  const navigate = useNavigate();
+  function handlePlayBtn() {
+    console.log("handle play run before");
+    if (!movieId) return null;
+    console.log("handle play run after");
+    navigate(`/movie/${movieId}`);
+  }
   return (
     <>
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10" />
@@ -12,7 +21,10 @@ const VideoTitle = ({ original_title, overview }) => {
         </p>
 
         <div className="flex gap-3">
-          <button className="cursor-pointer flex items-center gap-2 bg-white text-black px-4 md:px-6 py-2.5 rounded-md font-semibold text-sm md:text-lg hover:bg-white/80 transition shadow-lg">
+          <button
+            onClick={handlePlayBtn}
+            className="cursor-pointer flex items-center gap-2 bg-white text-black px-4 md:px-6 py-2.5 rounded-md font-semibold text-sm md:text-lg hover:bg-white/80 transition shadow-lg"
+          >
             ▶ Play
           </button>
 
