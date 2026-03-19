@@ -10,5 +10,22 @@ export const API_OPTIONS = {
     accept: "application/json",
   },
 };
+const languageMap = {
+  en: "English",
+  hi: "Hindi",
+  fr: "French",
+  es: "Spanish",
+  de: "German",
+  ja: "Japanese",
+  ko: "Korean",
+  zh: "Chinese",
+  it: "Italian",
+  ru: "Russian",
+  pt: "Portuguese",
+  ar: "Arabic",
+};
+export function findLanguage(original_language) {
+  return languageMap[original_language] || "Unknown";
+}
 
 export const TMDB_CDN_URL = "https://images.tmdb.org/t/p/w500/";
