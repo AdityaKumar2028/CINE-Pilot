@@ -17,8 +17,6 @@ const MovieDetails = () => {
 
   const trailer = useSelector((s) => s.movies.movieDetailTrailer);
   const movieData = useSelector((s) => s.movies.movieCardData);
-  console.log(trailer);
-  console.log(movieData);
 
   if (!trailer || !movieData) return null;
 
