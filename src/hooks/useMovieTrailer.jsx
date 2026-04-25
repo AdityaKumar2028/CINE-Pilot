@@ -18,6 +18,7 @@ const useMovieTrailer = (movieId) => {
       API_OPTIONS,
     );
     const json = await result.json();
+    console.log(json);
 
     const filterData = json.results.filter((video) => video.type === "Trailer");
     console.log(filterData);
