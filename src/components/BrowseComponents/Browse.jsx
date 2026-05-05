@@ -5,6 +5,7 @@ import SecondaryBrowse from "./SecondaryBrowse.jsx";
 import { usePopularMovies } from "../../hooks/usePopularMovies.jsx";
 import { useTopRatedMovies } from "../../hooks/useTopRatedMovies.jsx";
 import { useUpcomingMovies } from "../../hooks/useUpcomingMovies.jsx";
+import Footer from "../Layout/Footer.jsx";
 
 const Browse = () => {
   useNowPlayingMovies();
@@ -21,6 +22,7 @@ const Browse = () => {
           <SecondaryBrowse />
         </>
       </div>
+      <Footer />
     </div>
   );
 };

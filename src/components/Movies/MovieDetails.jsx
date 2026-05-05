@@ -14,12 +14,9 @@ const MovieDetails = () => {
   }, [id]);
 
   useMovieDetails(id);
-
   const trailer = useSelector((s) => s.movies.movieDetailTrailer);
   const movieData = useSelector((s) => s.movies.movieCardData);
-
   if (!trailer || !movieData) return null;
-
   const max = Math.min(7, trailer.length);
   const move = (dir) => setCurrent((p) => (p + dir + max) % max);
 
