@@ -1,5 +1,6 @@
 import fetchMovieSearch from "./fetchMovieSearch";
-import { addPilotMovies } from "../../assets/movieSlice";
+import { addPilotMovies } from "../../assets/askPilotSlice";
+
 const GeminiSearch = async (query, dispatch) => {
   const geminiQuery =
     "Act as a movie recommendation system and suggest some movies for the query " +

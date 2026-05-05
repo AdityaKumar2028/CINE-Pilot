@@ -1,9 +1,9 @@
-import Browse from "./Browse";
+import Browse from "../BrowseComponents/Browse";
 import Login from "../Auth/Login";
 import Header from "./Header";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
-import MovieDetails from "./MovieDetails";
-import AskPilot from "./AskPilot";
+import MovieDetails from "../Movies/MovieDetails";
+import AskPilot from "../AskPilotFeatures/AskPilot";
 
 const Body = () => {
   const Layout = () => (

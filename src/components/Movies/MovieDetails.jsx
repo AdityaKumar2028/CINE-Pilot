@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import { useMovieDetails } from "../hooks/useMovieDetails";
+import { useMovieDetails } from "../../hooks/useMovieDetails";
 import { useSelector } from "react-redux";
 import MovieDetailsTrailer from "./MovieDetailsTrailer";
 import { useState, useEffect } from "react";
-import { StatBadge } from "./StatBadge";
+import { StatBadge } from "../UI/StatBadge";
 
 const MovieDetails = () => {
   const { id } = useParams();

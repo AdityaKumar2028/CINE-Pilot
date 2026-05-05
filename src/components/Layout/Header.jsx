@@ -1,11 +1,11 @@
-import logo from "../assets/logo.jpg";
-import happy from "../assets/happy.png";
+import logo from "../../assets/logo.jpg";
+import happy from "../../assets/happy.png";
 import { signOut } from "firebase/auth";
 import { auth } from "../../assets/firebase";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addAskPilotState } from "../../assets/askPilotSlice";
-import AskPilotButton from "./AskPilotButton";
+import AskPilotButton from "../AskPilotFeatures/AskPilotButton";
 import useAuthListener from "../../hooks/useAuthListener";
 import { useCallback } from "react";
 
