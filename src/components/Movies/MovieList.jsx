@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
 import { useDispatch } from "react-redux";
-import { addMovieCardData } from "../assets/movieSlice";
+import { addMovieCardData } from "../../assets/movieSlice";
 
 const MovieList = ({ title, movies }) => {
   const dispatch = useDispatch();

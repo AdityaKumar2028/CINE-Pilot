@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import MovieList from "./MovieList";
+import MovieList from "../Movies/MovieList";
 
 const AskPilotMovieSuggestions = () => {
   const movies = useSelector((store) => store.askPilot);

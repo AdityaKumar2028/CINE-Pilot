@@ -1,8 +1,8 @@
-import Header from "./Header";
-import { backgroundURL, logoUrl } from "../assets/Constants";
+import Header from "../Layout/Header";
+import { backgroundURL, logoUrl } from "../../assets/Constants";
 import { useRef, useState } from "react";
-import { checkValidationData } from "../assets/validation";
-import { auth } from "../assets/firebase";
+import { checkValidationData } from "../../assets/validation";
+import { auth } from "../../assets/firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -10,7 +10,7 @@ import {
 } from "firebase/auth";
 
 import { useDispatch } from "react-redux";
-import { addUser } from "../assets/userSlice";
+import { addUser } from "../../assets/userSlice";
 const Login = () => {
   const dispatch = useDispatch();
   let [isSignInForm, setisSignInForm] = useState(true);

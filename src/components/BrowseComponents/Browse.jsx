@@ -1,10 +1,10 @@
-import Header from "./Header";
-import { useNowPlayingMovies } from "../hooks/useNowPlayingMovies.jsx";
+import Header from "../Layout/Header.jsx";
+import { useNowPlayingMovies } from "../../hooks/useNowPlayingMovies.jsx";
 import PrimaryBrowse from "./PrimaryBrowse.jsx";
 import SecondaryBrowse from "./SecondaryBrowse.jsx";
-import { usePopularMovies } from "../hooks/usePopularMovies.jsx";
-import { useTopRatedMovies } from "../hooks/useTopRatedMovies.jsx";
-import { useUpcomingMovies } from "../hooks/useUpcomingMovies.jsx";
+import { usePopularMovies } from "../../hooks/usePopularMovies.jsx";
+import { useTopRatedMovies } from "../../hooks/useTopRatedMovies.jsx";
+import { useUpcomingMovies } from "../../hooks/useUpcomingMovies.jsx";
 
 const Browse = () => {
   useNowPlayingMovies();

@@ -1,6 +1,5 @@
 import fetchMovieSearch from "./fetchMovieSearch";
-// import ai from "../assets/gemini";
-import { addPilotMovies } from "../assets/askPilotSlice";
+import { addPilotMovies } from "../../assets/movieSlice";
 const GeminiSearch = async (query, dispatch) => {
   const geminiQuery =
     "Act as a movie recommendation system and suggest some movies for the query " +
@@ -12,15 +11,9 @@ const GeminiSearch = async (query, dispatch) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ prompt: geminiQuery }),
   });
-  // const response = await ai.models.generateContent({
-  //   model: "gemini-2.5-flash",
-  //   contents: geminiQuery,
-  // });
-  // const text = response.candidates[0].content.parts[0].text;
   const result = await response.json();
 
   const movieList = result.text.split(", ");
-  // const movieList = text.split(", ");
 
   const resultResponse = await Promise.all(movieList.map(fetchMovieSearch));
 

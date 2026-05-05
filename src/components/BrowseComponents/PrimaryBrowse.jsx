@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import VideoBackground from "./VideoBackground";
-import VideoTitle from "./VideoTitle.jsx";
+import VideoBackground from "../Banner/VideoBackground.jsx";
+import VideoTitle from "../Banner/VideoTitle.jsx";
 
 const PrimaryBrowse = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);

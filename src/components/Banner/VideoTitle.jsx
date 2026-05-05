@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addMovieCardData } from "../assets/movieSlice";
-import MoreInfoVideo from "./MoreInfoVideo";
+import { addMovieCardData } from "../../assets/movieSlice";
+import MoreInfoVideo from "../Auth/MoreInfoVideo";
 
 const VideoTitle = ({ original_title, overview, movieId, movieData }) => {
   const navigate = useNavigate();

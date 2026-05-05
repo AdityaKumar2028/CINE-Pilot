@@ -1,5 +1,5 @@
 import Browse from "./Browse";
-import Login from "./Login";
+import Login from "../Auth/Login";
 import Header from "./Header";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import MovieDetails from "./MovieDetails";

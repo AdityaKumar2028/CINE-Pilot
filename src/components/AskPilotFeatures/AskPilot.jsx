@@ -1,4 +1,4 @@
-import { backgroundURL } from "../assets/Constants";
+import { backgroundURL } from "../../assets/Constants";
 import AskPilotSearch from "./AskPilotSearch";
 import AskPilotMovieSuggestions from "./AskPilotMovieSuggestions";
 

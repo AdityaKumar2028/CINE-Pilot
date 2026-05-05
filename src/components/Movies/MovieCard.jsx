@@ -1,4 +1,4 @@
-import { TMDB_CDN_URL } from "../assets/Constants";
+import { TMDB_CDN_URL } from "../../assets/Constants";
 
 const MovieCard = ({ movieData }) => {
   if (!movieData?.poster_path) return null;

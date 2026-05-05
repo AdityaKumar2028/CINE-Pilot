@@ -1,4 +1,4 @@
-import { findLanguage, TMDB_CDN_URL } from "../assets/Constants";
+import { findLanguage, TMDB_CDN_URL } from "../../assets/Constants";
 
 const MoreInfoVideo = ({ movieDetails }) => {
   if (!movieDetails) return null;
