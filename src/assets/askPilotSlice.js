@@ -6,6 +6,7 @@ const askPilotSlice = createSlice({
     askPilotState: false,
     movieNames: null,
     movieResult: null,
+    isLoading: false,
   },
   reducers: {
     addAskPilotState: (state, action) => {
@@ -16,9 +17,13 @@ const askPilotSlice = createSlice({
       state.movieNames = movieNames;
       state.movieResult = movieResult;
     },
+    setIsLoading: (state, action) => {
+      state.isLoading = action.payload;
+    },
   },
 });
 
-export const { addAskPilotState, addPilotMovies } = askPilotSlice.actions;
+export const { addAskPilotState, addPilotMovies, setIsLoading } =
+  askPilotSlice.actions;
 
 export default askPilotSlice.reducer;

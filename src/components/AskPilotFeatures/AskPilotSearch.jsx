@@ -1,12 +1,14 @@
 import { useRef } from "react";
 import GeminiSearch from "./GeminiSearch";
 import { useDispatch } from "react-redux";
+import { setIsLoading } from "../../assets/askPilotSlice";
 
 const AskPilotSearch = () => {
   const inputRef = useRef(null);
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
+    dispatch(setIsLoading(true));
     e.preventDefault();
     const query = inputRef.current?.value || "";
     if (!query.trim()) return;
@@ -16,7 +18,6 @@ const AskPilotSearch = () => {
 
   return (
     <div className="relative overflow-hidden p-[2px] sm:p-[3px] rounded-2xl w-full max-w-xs sm:max-w-lg md:max-w-2xl bg-zinc-900">
-      {/* Spinning conic-gradient border */}
       <div className="absolute top-1/2 left-1/2 w-[250%] aspect-square -translate-x-1/2 -translate-y-1/4 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_25%,#FF0000_75%,transparent_100%)]" />
 
       <form

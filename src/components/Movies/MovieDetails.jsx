@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import MovieDetailsTrailer from "./MovieDetailsTrailer";
 import { useState, useEffect } from "react";
 import { StatBadge } from "../UI/StatBadge";
+import Shimmer from "../UI/Shimmer";
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -16,7 +17,7 @@ const MovieDetails = () => {
   useMovieDetails(id);
   const trailer = useSelector((s) => s.movies.movieDetailTrailer);
   const movieData = useSelector((s) => s.movies.movieCardData);
-  if (!trailer || !movieData) return null;
+  if (!trailer || !movieData) return <Shimmer />;
   const max = Math.min(7, trailer.length);
   const move = (dir) => setCurrent((p) => (p + dir + max) % max);
 

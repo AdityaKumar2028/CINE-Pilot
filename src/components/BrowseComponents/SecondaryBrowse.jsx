@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
 import MovieList from "../Movies/MovieList";
+import Shimmer from "../UI/Shimmer";
 
 const SecondaryBrowse = () => {
   const movies = useSelector((store) => store.movies);
-  if (!movies) return;
+  if (!movies) return <Shimmer />;
 
   const { nowPlayingMovies, popularMovies, topRatedMovies, upcomingMovies } =
     movies;

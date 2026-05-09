@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
 import VideoBackground from "../Banner/VideoBackground.jsx";
 import VideoTitle from "../Banner/VideoTitle.jsx";
+import Shimmer from "../UI/Shimmer";
 
 const PrimaryBrowse = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
-  if (!movies) return;
+  if (!movies) return <Shimmer />;
   const { original_title, overview, id } = movies[0];
 
   return (

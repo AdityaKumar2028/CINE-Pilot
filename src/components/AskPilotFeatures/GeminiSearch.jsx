@@ -1,5 +1,5 @@
 import fetchMovieSearch from "./fetchMovieSearch";
-import { addPilotMovies } from "../../assets/askPilotSlice";
+import { addPilotMovies, setIsLoading } from "../../assets/askPilotSlice";
 
 const GeminiSearch = async (query, dispatch) => {
   const geminiQuery =
@@ -24,6 +24,8 @@ const GeminiSearch = async (query, dispatch) => {
       movieResult: resultResponse,
     }),
   );
+
+  dispatch(setIsLoading(false));
 };
 
 export default GeminiSearch;
