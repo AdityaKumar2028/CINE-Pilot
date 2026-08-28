@@ -1,4 +1,3 @@
-import Header from "../Layout/Header.jsx";
 import { useNowPlayingMovies } from "../../hooks/useNowPlayingMovies.jsx";
 import PrimaryBrowse from "./PrimaryBrowse.jsx";
 import SecondaryBrowse from "./SecondaryBrowse.jsx";
@@ -14,14 +13,9 @@ const Browse = () => {
   useUpcomingMovies();
 
   return (
-    <div className="bg-black min-h-screen">
-      <Header />
-      <div className="">
-        <>
-          <PrimaryBrowse />
-          <SecondaryBrowse />
-        </>
-      </div>
+    <div className="min-h-screen overflow-x-hidden bg-black">
+      <PrimaryBrowse />
+      <SecondaryBrowse />
       <Footer />
     </div>
   );

@@ -15,13 +15,13 @@ const MovieList = ({ title, movies }) => {
   }
 
   return (
-    <div className="w-full px-2 sm:px-3 py-2">
-      <h2 className="text-white text-base sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 px-1 capitalize">
+    <div className="w-full px-2 py-3 sm:px-3 sm:py-4">
+      <h2 className="mb-2 px-1 text-base font-bold capitalize text-white sm:mb-3 sm:text-xl md:text-2xl">
         {title}
       </h2>
 
       <div
-        className="flex gap-2 sm:gap-3 md:gap-4 overflow-x-auto pb-2"
+        className="flex gap-2 overflow-x-auto overscroll-x-contain pb-2 sm:gap-3 md:gap-4"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {safeMovies.map((data, index) => (

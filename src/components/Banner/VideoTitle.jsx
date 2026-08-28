@@ -15,20 +15,23 @@ const VideoTitle = ({ original_title, overview, movieId, movieData }) => {
 
   return (
     <>
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10 pointer-events-none" />
-      <div className="absolute z-40 top-[55%] md:top-1/4 left-6 sm:left-16 w-full max-w-lg text-white pr-6 sm:pr-0">
-        <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-4 drop-shadow-lg">
+      <div className="pointer-events-none absolute inset-0 z-10 bg-linear-to-r from-black/30 to-transparent" />
+      <div className="absolute inset-x-0 bottom-24 z-40 px-6 text-white sm:bottom-28 sm:left-10 sm:px-6 lg:left-16 lg:max-w-2xl">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-amber-300/90">
+          Featured tonight
+        </p>
+        <h1 className="mb-3 max-w-xl text-4xl font-black leading-[0.95] tracking-tight drop-shadow-2xl sm:text-5xl lg:text-7xl">
           {original_title}
         </h1>
 
-        <p className="hidden sm:block md:text-base text-sm text-gray-200 mb-6 line-clamp-3 drop-shadow">
+        <p className="mb-6 hidden max-w-xl text-sm leading-6 text-zinc-200 drop-shadow sm:line-clamp-3 sm:block lg:text-base">
           {overview}
         </p>
 
-        <div className="flex gap-3 items-center relative">
+        <div className="relative flex items-center gap-3">
           <button
             onClick={handlePlayBtn}
-            className="cursor-pointer flex items-center gap-2 bg-white text-black px-4 md:px-6 py-2 md:py-2.5 rounded-md font-bold text-sm md:text-lg hover:bg-white/80 transition shadow-lg"
+            className="flex cursor-pointer items-center gap-2 rounded-md bg-white px-5 py-2.5 text-sm font-bold text-black shadow-xl shadow-black/30 transition hover:bg-amber-300 sm:px-6 sm:text-base"
           >
             ▶ Play
           </button>

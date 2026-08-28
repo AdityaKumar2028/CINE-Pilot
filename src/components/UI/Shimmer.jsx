@@ -2,23 +2,22 @@ import React from "react";
 
 const Shimmer = () => {
   return (
-    <div className="w-full mt-6 px-6 py-8 bg-black text-white">
-      <div className="h-8 w-72 rounded-md bg-zinc-800 animate-pulse mb-6"></div>
+    <div className="w-full overflow-hidden bg-black px-4 py-8 text-white sm:px-6">
+      <div className="mb-6 h-8 w-48 animate-pulse rounded-md bg-zinc-800 sm:w-72"></div>
 
-      <div className="flex gap-5 overflow-x-hidden">
+      <div className="flex gap-2 overflow-x-hidden sm:gap-3 md:gap-4">
         {[...Array(8)].map((_, index) => (
           <div
             key={index}
-            className="min-w-[170px] h-[260px] rounded-xl overflow-hidden 
-                       bg-zinc-900 border border-zinc-800 shadow-lg"
+            className="h-[13.5rem] w-24 shrink-0 overflow-hidden rounded-md border border-zinc-800 bg-zinc-900 shadow-lg sm:h-[18rem] sm:w-32 md:h-[22rem] md:w-36 lg:h-[27rem] lg:w-44"
           >
             <div
-              className="w-full h-full bg-gradient-to-br 
+              className="relative h-full w-full bg-linear-to-br 
                          from-zinc-800 via-zinc-900 to-zinc-800 
                          animate-pulse relative"
             >
               <div
-                className="absolute inset-0 bg-gradient-to-r 
+                className="absolute inset-0 bg-linear-to-r 
                            from-transparent via-white/5 to-transparent 
                            animate-pulse"
               ></div>
@@ -27,22 +26,21 @@ const Shimmer = () => {
         ))}
       </div>
 
-      <div className="h-8 w-96 rounded-md bg-zinc-800 animate-pulse mt-12 mb-6"></div>
+      <div className="mb-6 mt-12 h-8 w-56 animate-pulse rounded-md bg-zinc-800 sm:w-96"></div>
 
-      <div className="flex gap-5 overflow-x-hidden">
+      <div className="flex gap-2 overflow-x-hidden sm:gap-3 md:gap-4">
         {[...Array(8)].map((_, index) => (
           <div
             key={index}
-            className="min-w-[170px] h-[260px] rounded-xl overflow-hidden 
-                       bg-zinc-900 border border-zinc-800 shadow-lg"
+            className="h-[13.5rem] w-24 shrink-0 overflow-hidden rounded-md border border-zinc-800 bg-zinc-900 shadow-lg sm:h-[18rem] sm:w-32 md:h-[22rem] md:w-36 lg:h-[27rem] lg:w-44"
           >
             <div
-              className="w-full h-full bg-gradient-to-br 
+              className="relative h-full w-full bg-linear-to-br 
                          from-zinc-800 via-zinc-900 to-zinc-800 
                          animate-pulse relative"
             >
               <div
-                className="absolute inset-0 bg-gradient-to-r 
+                className="absolute inset-0 bg-linear-to-r 
                            from-transparent via-white/5 to-transparent 
                            animate-pulse"
               ></div>

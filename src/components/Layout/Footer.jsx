@@ -16,9 +16,9 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-[#141414] text-white border-t border-[#E50914]/20">
-      <div className="max-w-[1400px] w-full mx-auto px-6 py-8 md:py-10">
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12 border-b border-white/10 pb-8">
-          <div className="w-full lg:max-w-[35%]">
+      <div className="mx-auto w-full max-w-350 px-4 py-8 sm:px-6 md:py-10">
+        <div className="grid grid-cols-1 items-start gap-8 border-b border-white/10 pb-8 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr] lg:gap-12">
+          <div className="w-full">
             <h2
               className="text-4xl tracking-wide mb-3"
               style={{ fontFamily: "'Bebas Neue', cursive" }}
@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-full lg:w-auto flex-1">
+          <div className="w-full">
             <h3 className="text-xl font-bold mb-1">{myName}</h3>
 
             <p className="text-[#E50914] text-xs mb-4 font-medium tracking-wide uppercase">
@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-full lg:w-[35%]">
+          <div className="w-full sm:col-span-2 lg:col-span-1">
             <p className="text-xs tracking-widest text-gray-500 uppercase mb-3 font-semibold">
               Connect
             </p>

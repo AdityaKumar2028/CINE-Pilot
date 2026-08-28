@@ -26,7 +26,7 @@ const MovieDetailsTrailer = ({ trailerKey, trailerDetails }) => {
       <div className="absolute inset-0 z-10 bg-transparent" />
       <button
         onClick={() => setMuted((prev) => !prev)}
-        className="absolute bottom-3 right-3 sm:bottom-5 sm:right-5 z-20 bg-black/60 backdrop-blur-md text-white font-medium text-xs sm:text-sm px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border border-white/20 hover:bg-red-600 hover:border-red-600 transition-all duration-300 shadow-lg flex items-center gap-2"
+        className="absolute bottom-3 right-3 z-20 flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-2 text-xs font-medium text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:border-red-600 hover:bg-red-600 sm:bottom-5 sm:right-5 sm:px-5 sm:py-2.5 sm:text-sm"
       >
         {muted ? "🔇 Unmute" : "🔊 Mute"}
       </button>

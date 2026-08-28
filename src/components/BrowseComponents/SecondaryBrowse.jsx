@@ -10,7 +10,7 @@ const SecondaryBrowse = () => {
     movies;
 
   return (
-    <div className="relative z-20 mt-4 md:-mt-80 px-2">
+    <div className="relative z-20 -mt-8 px-2 sm:-mt-12 md:-mt-20 lg:-mt-28">
       <MovieList title={"Now Playing"} movies={nowPlayingMovies} />
       <MovieList title={"Popular"} movies={topRatedMovies} />
       <MovieList title={"Upcoming Movies"} movies={upcomingMovies} />

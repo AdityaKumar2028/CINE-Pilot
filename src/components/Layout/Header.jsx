@@ -32,7 +32,7 @@ const Header = () => {
   }
 
   return (
-    <div className="absolute top-0 w-full z-50 flex justify-between items-center px-4 sm:px-8 py-3 sm:py-4 bg-gradient-to-b from-black/80 to-transparent">
+    <div className="absolute top-0 z-50 flex w-full items-center justify-between bg-linear-to-b from-black/80 to-transparent px-4 py-3 sm:px-8 sm:py-4">
       <img
         className="cursor-pointer w-28 sm:w-44 object-contain mix-blend-screen rounded-lg"
         src={logo}

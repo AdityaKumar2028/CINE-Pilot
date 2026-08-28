@@ -1,4 +1,3 @@
-import Header from "../Layout/Header";
 import { backgroundURL, logoUrl } from "../../assets/Constants";
 import { useRef, useState } from "react";
 import { checkValidationData } from "../../assets/validation";
@@ -83,43 +82,25 @@ const Login = () => {
   }
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative min-h-screen w-full overflow-y-auto bg-black">
       <img
         src={backgroundURL}
         alt="background"
         className="absolute inset-0 w-full h-full object-cover -z-10 grayscale brightness-[0.3]"
       />
 
-      <div className="relative z-10">
-        <Header />
-      </div>
       <form
         onSubmit={(e) => {
           e.preventDefault();
         }}
       >
-        <div
-          className={`absolute inset-0 flex items-center justify-center z-20 px-4 ${
-            isSignInForm ? "mt-0" : "mt-24"
-          }`}
-        >
-          <div
-            className="
-  w-full max-w-md 
-  bg-black/70
-  backdrop-blur-md
-  border border-neutral-800
-  border-t-4 border-t-red-600
-  rounded-lg
-  shadow-2xl
-  p-8
-"
-          >
-            <h2 className="text-3xl font-bold text-white text-center mb-8 tracking-wide">
+        <div className="relative z-20 flex min-h-screen items-center justify-center px-4 py-24 sm:px-6 sm:py-28">
+          <div className="w-full max-w-md rounded-lg border border-neutral-800 border-t-4 border-t-red-600 bg-black/70 p-5 shadow-2xl backdrop-blur-md sm:p-8">
+            <h2 className="mb-6 text-center text-2xl font-bold tracking-wide text-white sm:mb-8 sm:text-3xl">
               {isSignInForm ? "Welcome Back!" : "Welcome!"}
             </h2>
 
-            <div className="space-y-5 flex flex-col gap-2 p-4">
+            <div className="flex flex-col gap-2 space-y-5 sm:p-2">
               {!isSignInForm && (
                 <input
                   ref={nameRef}

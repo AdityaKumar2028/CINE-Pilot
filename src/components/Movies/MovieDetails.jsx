@@ -22,10 +22,10 @@ const MovieDetails = () => {
   const move = (dir) => setCurrent((p) => (p + dir + max) % max);
 
   return (
-    <div className="bg-black min-h-screen text-white px-4 sm:px-6 lg:px-8 w-full pt-20 pb-12">
+    <div className="min-h-screen w-full overflow-x-hidden bg-black px-4 pb-12 pt-24 text-white sm:px-6 sm:pt-28 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <div className="mb-6 sm:mb-8 text-center sm:text-left">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+          <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
             {movieData.title}
           </h1>
           <div className="h-1.5 w-24 bg-gradient-to-r from-red-600 to-transparent mt-4 rounded-full mx-auto sm:mx-0" />
@@ -68,7 +68,7 @@ const MovieDetails = () => {
             </button>
           </div>
         )}
-        <div className="grid grid-cols-3 gap-3 sm:gap-6 mt-8 sm:mt-10">
+        <div className="mt-8 grid grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-6">
           <StatBadge
             icon="🔥"
             label="Popularity"
@@ -81,7 +81,7 @@ const MovieDetails = () => {
             value={movieData.vote_count?.toLocaleString()}
           />
         </div>
-        <div className="mt-8 sm:mt-10 bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-8">
+        <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5 sm:mt-10 sm:p-8">
           <h3 className="text-lg sm:text-xl font-bold mb-3 text-white/90">
             Overview
           </h3>

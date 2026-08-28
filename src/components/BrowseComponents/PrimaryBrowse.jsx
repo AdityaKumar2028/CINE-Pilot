@@ -6,18 +6,21 @@ import Shimmer from "../UI/Shimmer";
 const PrimaryBrowse = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
   if (!movies) return <Shimmer />;
-  const { original_title, overview, id } = movies[0];
+  const featuredMovie = movies[0];
+  if (!featuredMovie) return <Shimmer />;
+  const { original_title, overview, id } = featuredMovie;
 
   return (
-    <div className="relative w-full h-auto md:h-full bg-black overflow-hidden">
+    <section className="relative isolate min-h-[32rem] w-full overflow-hidden bg-zinc-950 sm:min-h-[38rem] lg:min-h-[42rem]">
       <VideoBackground movieId={id} />
       <VideoTitle
         original_title={original_title}
         overview={overview}
         movieId={id}
-        movieData={movies[1]}
+        movieData={featuredMovie}
       />
-    </div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-40 bg-gradient-to-t from-black via-black/70 to-transparent" />
+    </section>
   );
 };
 
