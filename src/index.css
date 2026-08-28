@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@layer base {
+  html {
+    background: #000;
+  }
+
+  body {
+    min-width: 320px;
+    overflow-x: hidden;
+    background: #000;
+  }
+
+  button,
+  a,
+  input {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

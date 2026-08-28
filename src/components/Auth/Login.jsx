@@ -94,19 +94,19 @@ const Login = () => {
           e.preventDefault();
         }}
       >
-        <div className="relative z-20 flex min-h-screen items-center justify-center px-4 py-24 sm:px-6 sm:py-28">
-          <div className="w-full max-w-md rounded-lg border border-neutral-800 border-t-4 border-t-red-600 bg-black/70 p-5 shadow-2xl backdrop-blur-md sm:p-8">
+        <div className="relative z-20 flex min-h-screen items-center justify-center px-3 py-20 sm:px-6 sm:py-28">
+          <div className="w-full max-w-md rounded-lg border border-neutral-800 border-t-4 border-t-red-600 bg-black/70 p-4 shadow-2xl backdrop-blur-md sm:p-8">
             <h2 className="mb-6 text-center text-2xl font-bold tracking-wide text-white sm:mb-8 sm:text-3xl">
               {isSignInForm ? "Welcome Back!" : "Welcome!"}
             </h2>
 
-            <div className="flex flex-col gap-2 space-y-5 sm:p-2">
+            <div className="flex flex-col gap-4 sm:gap-5 sm:p-2">
               {!isSignInForm && (
                 <input
                   ref={nameRef}
                   type="text"
                   placeholder="Full Name"
-                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 text-white placeholder-neutral-400 transition-colors"
+                  className="w-full rounded-md border border-neutral-700 bg-neutral-800 px-4 py-3 text-base text-white transition-colors placeholder-neutral-400 focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
                 />
               )}
               <input
@@ -114,9 +114,9 @@ const Login = () => {
                 type="text"
                 placeholder="Email Address"
                 defaultValue="user1234@gmail.com"
-                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-md focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 text-white placeholder-neutral-400 transition-colors"
+                className="w-full rounded-md border border-neutral-700 bg-neutral-800 px-4 py-3 text-base text-white transition-colors placeholder-neutral-400 focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
               />
-              <div className="input-password w-full flex items-center bg-neutral-800 border border-neutral-700 rounded-md px-4 focus-within:border-red-600 focus-within:ring-1 focus-within:ring-red-600">
+              <div className="input-password flex w-full items-center rounded-md border border-neutral-700 bg-neutral-800 px-4 focus-within:border-red-600 focus-within:ring-1 focus-within:ring-red-600">
                 <input
                   ref={passwordRef}
                   type={showPassword}
@@ -125,7 +125,7 @@ const Login = () => {
                   className="w-full py-3 bg-transparent text-white placeholder-neutral-400 focus:outline-none"
                 />
                 <span
-                  className="ml-2 cursor-pointer select-none "
+                  className="ml-2 min-h-11 min-w-11 cursor-pointer select-none rounded text-center leading-11"
                   onClick={handlePasswordClick}
                 >
                   {showPassword === "password" ? "👀" : "🙈"}
@@ -133,7 +133,7 @@ const Login = () => {
               </div>
 
               {!isSignInForm && (
-                <div className="input-password w-full bg-neutral-800 border border-neutral-700 rounded-md px-4 focus-within:border-red-600 focus-within:ring-1 focus-within:ring-red-600">
+                <div className="input-password flex w-full items-center rounded-md border border-neutral-700 bg-neutral-800 px-4 focus-within:border-red-600 focus-within:ring-1 focus-within:ring-red-600">
                   <input
                     ref={retypePasswordRef}
                     type="password"
@@ -143,15 +143,15 @@ const Login = () => {
                   <span className="ml-2 cursor-pointer select-none "></span>
                 </div>
               )}
-              <p className="text-red-500 text-sm mt-1  font-bold ">{message}</p>
+              {message && <p className="mt-1 text-sm font-bold text-red-500">{message}</p>}
               <button
                 onClick={handleSubmitButton}
-                className="w-full p-3 mt-5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-md transition-all duration-200 shadow-lg tracking-wider text-lg cursor-pointer"
+                className="mt-2 min-h-12 w-full cursor-pointer rounded-md bg-red-600 p-3 text-lg font-bold tracking-wider text-white shadow-lg transition-all duration-200 hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"
               >
                 {isSignInForm ? "Sign In" : "Sign Up"}
               </button>
               <p
-                className=" text-white font-light rounded-md cursor-pointer"
+                className="cursor-pointer rounded-md py-2 text-sm font-light text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-base"
                 onClick={changeLogin}
               >
                 {isSignInForm ? "New to CINEPilot?" : "Already A User?"}{" "}

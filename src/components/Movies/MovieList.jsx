@@ -15,13 +15,13 @@ const MovieList = ({ title, movies }) => {
   }
 
   return (
-    <div className="w-full px-2 py-3 sm:px-3 sm:py-4">
+    <section className="w-full px-3 py-3 sm:px-4 sm:py-4">
       <h2 className="mb-2 px-1 text-base font-bold capitalize text-white sm:mb-3 sm:text-xl md:text-2xl">
         {title}
       </h2>
 
       <div
-        className="flex gap-2 overflow-x-auto overscroll-x-contain pb-2 sm:gap-3 md:gap-4"
+        className="flex snap-x snap-mandatory gap-2 overflow-x-auto overscroll-x-contain pb-3 pr-3 [scrollbar-width:none] touch-pan-x sm:gap-3 md:gap-4"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {safeMovies.map((data, index) => (
@@ -29,13 +29,13 @@ const MovieList = ({ title, movies }) => {
             key={data?.id || index}
             to={`/movie/${data.id}`}
             onClick={() => handleClick(data)}
-            className="shrink-0 block"
+            className="block shrink-0 snap-start rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
           >
             <MovieCard movieData={data} />
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

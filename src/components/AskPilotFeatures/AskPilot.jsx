@@ -16,7 +16,7 @@ const AskPilot = () => {
           Ask anything about movies
         </p>
 
-        <div className="w-full flex flex-col items-center">
+        <div className="flex w-full max-w-7xl flex-col items-center">
           <AskPilotSearch />
           <AskPilotMovieSuggestions />
         </div>

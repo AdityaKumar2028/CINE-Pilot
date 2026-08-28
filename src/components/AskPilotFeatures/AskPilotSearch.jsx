@@ -17,12 +17,12 @@ const AskPilotSearch = () => {
   };
 
   return (
-    <div className="relative overflow-hidden p-[2px] sm:p-[3px] rounded-2xl w-full max-w-xs sm:max-w-lg md:max-w-2xl bg-zinc-900">
+    <div className="relative w-full max-w-2xl overflow-hidden rounded-2xl bg-zinc-900 p-[2px] sm:p-[3px]">
       <div className="absolute top-1/2 left-1/2 w-[250%] aspect-square -translate-x-1/2 -translate-y-1/4 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_25%,#FF0000_75%,transparent_100%)]" />
 
       <form
         onSubmit={handleSubmit}
-        className="relative z-10 flex items-center bg-[#0a0a0a] rounded-[13px] px-3 sm:px-5 py-3 sm:py-4 w-full gap-2"
+        className="relative z-10 flex min-h-13 w-full items-center gap-2 rounded-[13px] bg-[#0a0a0a] px-3 py-3 sm:px-5 sm:py-4"
       >
         <input
           ref={inputRef}
@@ -31,7 +31,7 @@ const AskPilotSearch = () => {
         />
         <button
           type="submit"
-          className="text-gray-400 hover:text-[#FF0000] transition-colors shrink-0"
+          className="shrink-0 rounded p-1 text-gray-400 transition-colors hover:text-[#FF0000] focus-visible:outline-2 focus-visible:outline-red-500"
           aria-label="Search"
         >
           <svg

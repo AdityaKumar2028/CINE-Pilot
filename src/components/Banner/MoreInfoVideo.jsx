@@ -8,12 +8,12 @@ const MoreInfoVideo = ({ movieDetails }) => {
   const language = findLanguage(original_language) || original_language;
 
   return (
-    <div className="flex flex-col gap-3 p-3 bg-black/80 backdrop-blur-md border border-gray-600 rounded-xl overflow-hidden">
+    <div className="flex flex-col gap-3 overflow-hidden rounded-xl border border-gray-600 bg-black/90 p-3 backdrop-blur-md">
       {(backdrop_path || poster_path) && (
         <img
           src={TMDB_CDN_URL + (backdrop_path ? backdrop_path : poster_path)}
           alt="Movie Poster"
-          className="w-full h-auto object-cover rounded-lg shadow-md"
+          className="max-h-44 w-full rounded-lg object-cover shadow-md sm:max-h-none"
         />
       )}
 

@@ -2,11 +2,11 @@ const AskPilotButton = ({ props }) => {
   return (
     <button
       onClick={props}
-      className="cursor-pointer group relative inline-flex p-[2px] rounded-[10px] overflow-hidden focus:outline-none"
+      className="group relative inline-flex shrink-0 cursor-pointer overflow-hidden rounded-[10px] p-[2px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
     >
       <div className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,#ff0080,#ff4500,#ffd700,#00ff88,#00cfff,#a855f7,#ff0080)] animate-[spin_2.5s_linear_infinite] group-hover:animate-[spin_1.2s_linear_infinite] group-hover:brightness-125 transition-all" />
 
-      <div className="relative z-10 flex items-center gap-[5px] sm:gap-[7px] bg-[#0a0a0f] group-hover:bg-[#12121a] transition-colors duration-200 rounded-[8px] px-3 py-1.5 sm:px-[18px] sm:py-2">
+      <div className="relative z-10 flex items-center gap-[5px] rounded-[8px] bg-[#0a0a0f] px-2.5 py-2 transition-colors duration-200 group-hover:bg-[#12121a] sm:gap-[7px] sm:px-[18px]">
         <svg
           className="w-[12px] h-[12px] sm:w-[15px] sm:h-[15px] opacity-90 shrink-0"
           viewBox="0 0 24 24"
